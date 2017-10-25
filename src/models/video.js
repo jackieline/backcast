@@ -6,7 +6,14 @@ var Video = Backbone.Model.extend({
   },
 
   select: function() {
-    this.trigger('select', this);
+    // this = the model (because of line 10 in VideoListEntryView)
+    this.trigger('jackie', this);
   }
 
 });
+
+// object.on("jackie", function(msg) {
+//   alert("Triggered " + msg);
+// });
+
+// object.trigger("jackie", 7);
